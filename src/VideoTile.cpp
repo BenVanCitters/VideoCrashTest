@@ -104,7 +104,7 @@ void VideoTile::draw(ofVec2f offset,  ofVec2f rectMin, ofVec2f rectMax)
         }
         else
         {
-            cout << ofGetTimestampString() << " - mPlayer(" << &mPlayer << ".getTexture() returned null"  << endl;
+            cout << ofGetTimestampString() << " - mPlayer(" << &mPlayer << ").getTexture() returned null"  << endl;
         }
     }
     
