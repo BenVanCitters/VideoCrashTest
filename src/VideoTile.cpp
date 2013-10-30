@@ -92,11 +92,21 @@ void VideoTile::draw(ofVec2f offset,  ofVec2f rectMin, ofVec2f rectMax)
     ofVec2f displacement = mPos+offset;
     displacement.x = fmod(displacement.x, rectMax.x)-rectMin.x;
     displacement.y = fmod(displacement.y, rectMax.y)-rectMin.y;
+
     if(isAssetLoaded())
     {
-        mPlayer.getTexture()->bind();
-        mVboMesh.draw();
-        mPlayer.getTexture()->unbind();
+        ofTexture* videoTex = mPlayer.getTexture();
+        if(videoTex  != NULL)
+        {
+            videoTex->bind();
+            mVboMesh.draw();
+            videoTex->unbind();
+        }
+        else
+        {
+            cout << ofGetTimestampString() << " - mPlayer(" << &mPlayer << ".getTexture() returned null"  << endl;
+        }
     }
+    
     ofPopMatrix();
 }
