@@ -1,8 +1,8 @@
 //
 //  TileLayer.h
-//  
 //
-//  Created by Ben Van CItters on 10/7/13.
+//
+//  Created by Ben Van Citters on 10/7/13.
 //
 //
 
@@ -16,7 +16,7 @@
 class TileLayer
 {
     std::vector<VideoTile*> mTiles;
-
+    
 public:
     bool mShowFPS;
     bool mIsUsingLights;

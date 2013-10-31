@@ -7,6 +7,8 @@
 class VideoCrashApp : public ofBaseApp {
 public:
     TileLayer mTileLayer;
+    float mPrintTimeDelay;
+    float mNextPrintTm;
     
     //openframeworks app functions
     void setup();

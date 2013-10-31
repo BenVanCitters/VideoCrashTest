@@ -1,17 +1,17 @@
 //
 //  DiamondVideoTile.cpp
-//  
 //
-//  Created by Ben Van CItters on 10/21/13.
+//
+//  Created by Ben Van Citters on 10/21/13.
 //
 //
 
 #include "VideoTile.h"
 
 ofVec3f const VideoTile::verts[4] = {ofVec3f(0.f,0.f,0.f),
-                                            ofVec3f(1,0,0.f),
-                                            ofVec3f(0,1,0.f),
-                                            ofVec3f(1,1.f,0.f)};
+    ofVec3f(1,0,0.f),
+    ofVec3f(0,1,0.f),
+    ofVec3f(1,1.f,0.f)};
 ofVec3f VideoTile::leg1Dir = (verts[1] - verts[0]).normalize();
 ofVec3f VideoTile::leg2Dir = (verts[2] - verts[0]).normalize();
 
@@ -33,8 +33,8 @@ void VideoTile::buildDiamondMesh(ofVec2f currentDim)
         ofVec2f normdTexCoords[4] = {ofVec3f(0,0),
             leg2Dir*currentDim.y,
             leg1Dir*currentDim.x,
-                                    (leg1Dir*currentDim.x+leg2Dir*currentDim.y),
-                                    };
+            (leg1Dir*currentDim.x+leg2Dir*currentDim.y),
+        };
         
         ofVec2f maxDim(0,0);
         float minX = 99999;
@@ -62,9 +62,9 @@ VideoTile::VideoTile(string url, ofVec3f pos, ofVec2f startDim )
 {
     mPos = pos;
     mStartDim = startDim;
-
+    
     mVertsLoaded = false;
-
+    
     buildDiamondMesh(mStartDim);
     
     mImgURL = url;
@@ -92,7 +92,7 @@ void VideoTile::draw(ofVec2f offset,  ofVec2f rectMin, ofVec2f rectMax)
     ofVec2f displacement = mPos+offset;
     displacement.x = fmod(displacement.x, rectMax.x)-rectMin.x;
     displacement.y = fmod(displacement.y, rectMax.y)-rectMin.y;
-
+    
     if(isAssetLoaded())
     {
         ofTexture* videoTex = mPlayer.getTexture();

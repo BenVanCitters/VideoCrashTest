@@ -7,15 +7,22 @@ void VideoCrashApp::setup()
 	ofSetFrameRate(60);
     ofSeedRandom();
     ofHideCursor();
-//    cout << "dataPathRoot(): " <<  dataPathRoot().toString()  << endl;  //#include "ofUtils.cpp"
+    
     ofSetWorkingDirectoryToDefault();
     mTileLayer.setup();
-//    mAssetDownloader.mTileLayer = &mTileLayer;
+    
 }
 
 void VideoCrashApp::update()
 {
-
+    float tm = ofGetElapsedTimef();
+    
+    if(tm > mNextPrintTm)
+    {
+        cout << ofGetTimestampString() << ": lifeline check" << endl;
+        mNextPrintTm += mPrintTimeDelay;
+    }
+    mPrintTimeDelay = 60;
 }
 
 //------------------------------------------------------------------------------
@@ -42,7 +49,6 @@ void VideoCrashApp::keyPressed(int key)
 
 void VideoCrashApp::mousePressed(int x, int y, int button)
 {
-//	mTileLayer.updateImages(2,true);
     cout << "mousePressed: " << x << ", " << y << " button: " << button << endl;
 }
 
@@ -52,6 +58,5 @@ void VideoCrashApp::mouseMoved(int x, int y)
 
 void VideoCrashApp::exit()
 {
-    // stop the thread
-//    thread.stopThread();
+    
 }
