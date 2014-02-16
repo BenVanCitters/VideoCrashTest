@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E4B69B5A0A3A1756003C02F2"
-            BuildableName = "IOCWall.app"
-            BlueprintName = "IOCWall"
-            ReferencedContainer = "container:IOCWall.xcodeproj">
+            BuildableName = "VideoCrash.app"
+            BlueprintName = "VideoCrash"
+            ReferencedContainer = "container:VideoCrashTest.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -52,9 +52,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E4B69B5A0A3A1756003C02F2"
-            BuildableName = "IOCWall.app"
-            BlueprintName = "IOCWall"
-            ReferencedContainer = "container:IOCWall.xcodeproj">
+            BuildableName = "VideoCrash.app"
+            BlueprintName = "VideoCrash"
+            ReferencedContainer = "container:VideoCrashTest.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
